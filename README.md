@@ -1,6 +1,8 @@
 # 📚 Book Recommender System
 
 A content-based Book Recommender System built using Python, Pandas, and Scikit-Learn, deployed using Flask.
+Used DataSet
+https://www.kaggle.com/datasets/saurabhbagchi/books-dataset/data
 
 ![Book Recommender Demo](https://github.com/user-attachments/assets/56368c74-f0f0-454f-b93d-f9cfc67ad2a6)
 
