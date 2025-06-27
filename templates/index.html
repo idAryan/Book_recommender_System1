@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book Recommender System</h1>
+
+    <form action="/recommend" method="POST">
+        <input list="books" name="book_name" placeholder="Type a book title..." autocomplete="off" required>
+        
+        <!-- Datalist acts like a dropdown when typing -->
+        <datalist id="books">
+            {% for book in all_books %}
+                <option value="{{ book }}">
+            {% endfor %}
+        </datalist>
+    
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+
+    {% if recommendations %}
+    <div class="recommendations">
+        <h2>Recommended Books:</h2>
+        {% for book in recommendations %}
+            <div class="book">{{ book }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
